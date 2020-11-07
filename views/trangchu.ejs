@@ -1,0 +1,53 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TrangChu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+            <h3>Danh sách Sản Phẩm :</h3>
+            <div class="row">
+                <div class="col-md-6">   
+                </div>
+                <div class="col-md-6">
+                    <!-- <a href="/deleteAll" class="btn btn-danger" style="float: right;">Xóa</a> -->
+                </div>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Mã Sản Phẩm</th>
+                        <th>Tên Sản Phẩm</th>
+                        <th>Số Lượng</th>
+                        <th>Chức năng</th>
+                    </tr>
+                </thead>
+                 <tbody> 
+                     <% 
+                     data.Items.forEach(function(value){ %>
+                   <tr>
+                        <td><%=value.MaSanPham%></td>
+                        <td><%=value.TenSanPham%></td>
+                        <td><%=value.SoLuong%></td>
+                       <!-- <td><input type="checkbox" name="check"/></td>  -->
+                       <td><a href="/update/<%=value.MaSanPham%>" class="btn btn-success">Update</a>
+                        <a href="/delete/<%=value.MaSanPham%>" class="btn btn-danger">Delete</a></td>
+                   </tr>
+                      <% })%>
+                  
+                 </tbody>
+            </table>
+            <a href="/sanpham/add" class="btn btn-success">Create</a>
+
+      
+     </div>
+     
+</body>
+</html>
